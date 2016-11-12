@@ -1,14 +1,14 @@
 //
-//  DMViewController.swift
+//  PeopleViewController.swift
 //  Athna
 //
-//  Created by WuGuihua on 11/7/16.
+//  Created by WuGuihua on 11/11/16.
 //  Copyright © 2016 Sherlock. All rights reserved.
 //
 
 import UIKit
 
-class DMViewController: UIViewController {
+class PeopleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
