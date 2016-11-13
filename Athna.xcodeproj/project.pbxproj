@@ -16,6 +16,11 @@
 		5F73C5091DD132A3000F31D3 /* AthnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C5081DD132A3000F31D3 /* AthnaTests.swift */; };
 		5F73C5141DD132A3000F31D3 /* AthnaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C5131DD132A3000F31D3 /* AthnaUITests.swift */; };
 		5F73C5231DD13571000F31D3 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C5221DD13571000F31D3 /* MessageViewController.swift */; };
+		5F7BFC281DD78F6F0020D3D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7BFC271DD78F6F0020D3D5 /* ProfileViewController.swift */; };
+		5F7BFC2C1DD7D5F40020D3D5 /* Home 300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BFC291DD7D5F40020D3D5 /* Home 300x300.png */; };
+		5F7BFC2D1DD7D5F40020D3D5 /* Profile 300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BFC2A1DD7D5F40020D3D5 /* Profile 300x300.png */; };
+		5F7BFC2E1DD7D5F40020D3D5 /* Search 300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BFC2B1DD7D5F40020D3D5 /* Search 300x300.png */; };
+		5F7BFC301DD7D6130020D3D5 /* MSG 300x300.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BFC2F1DD7D6130020D3D5 /* MSG 300x300.png */; };
 		5FB070771DD6A87000BCDDDF /* romance.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB070761DD6A87000BCDDDF /* romance.png */; };
 		5FB070791DD6A87900BCDDDF /* hangout.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FB070781DD6A87900BCDDDF /* hangout.png */; };
 		5FB0707B1DD6A94300BCDDDF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB0707A1DD6A94300BCDDDF /* PeopleViewController.swift */; };
@@ -30,6 +35,11 @@
 		5FB0708F1DD6C87E00BCDDDF /* Date - Echo Wu - Profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FB0708B1DD6C87E00BCDDDF /* Date - Echo Wu - Profile.jpg */; };
 		5FB070901DD6C87E00BCDDDF /* Date - Underwood - Profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FB0708C1DD6C87E00BCDDDF /* Date - Underwood - Profile.jpg */; };
 		5FC968131DD13C1600A83337 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC968121DD13C1600A83337 /* MeViewController.swift */; };
+		5FEAC3FF1DD7E10400B10D5D /* QA (71x71).png in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAC3FE1DD7E10400B10D5D /* QA (71x71).png */; };
+		5FEAC4011DD8A8CE00B10D5D /* PhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAC4001DD8A8CE00B10D5D /* PhotoViewCell.swift */; };
+		5FEAC4061DD8B20C00B10D5D /* Logan Paul - 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAC4031DD8B20C00B10D5D /* Logan Paul - 1.jpg */; };
+		5FEAC4071DD8B20C00B10D5D /* Logan Paul - 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAC4041DD8B20C00B10D5D /* Logan Paul - 2.jpg */; };
+		5FEAC4081DD8B20C00B10D5D /* Logan Paul - 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAC4051DD8B20C00B10D5D /* Logan Paul - 3.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +75,11 @@
 		5F73C5131DD132A3000F31D3 /* AthnaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthnaUITests.swift; sourceTree = "<group>"; };
 		5F73C5151DD132A3000F31D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F73C5221DD13571000F31D3 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		5F7BFC271DD78F6F0020D3D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5F7BFC291DD7D5F40020D3D5 /* Home 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home 300x300.png"; sourceTree = "<group>"; };
+		5F7BFC2A1DD7D5F40020D3D5 /* Profile 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile 300x300.png"; sourceTree = "<group>"; };
+		5F7BFC2B1DD7D5F40020D3D5 /* Search 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search 300x300.png"; sourceTree = "<group>"; };
+		5F7BFC2F1DD7D6130020D3D5 /* MSG 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSG 300x300.png"; sourceTree = "<group>"; };
 		5FB070761DD6A87000BCDDDF /* romance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = romance.png; sourceTree = "<group>"; };
 		5FB070781DD6A87900BCDDDF /* hangout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangout.png; sourceTree = "<group>"; };
 		5FB0707A1DD6A94300BCDDDF /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +94,11 @@
 		5FB0708B1DD6C87E00BCDDDF /* Date - Echo Wu - Profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Date - Echo Wu - Profile.jpg"; sourceTree = "<group>"; };
 		5FB0708C1DD6C87E00BCDDDF /* Date - Underwood - Profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Date - Underwood - Profile.jpg"; sourceTree = "<group>"; };
 		5FC968121DD13C1600A83337 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		5FEAC3FE1DD7E10400B10D5D /* QA (71x71).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QA (71x71).png"; sourceTree = "<group>"; };
+		5FEAC4001DD8A8CE00B10D5D /* PhotoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCell.swift; sourceTree = "<group>"; };
+		5FEAC4031DD8B20C00B10D5D /* Logan Paul - 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logan Paul - 1.jpg"; sourceTree = "<group>"; };
+		5FEAC4041DD8B20C00B10D5D /* Logan Paul - 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logan Paul - 2.jpg"; sourceTree = "<group>"; };
+		5FEAC4051DD8B20C00B10D5D /* Logan Paul - 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Logan Paul - 3.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +149,8 @@
 		5F73C4F01DD132A3000F31D3 /* Athna */ = {
 			isa = PBXGroup;
 			children = (
-				5FB070801DD6C67B00BCDDDF /* pics */,
+				5FEAC4021DD8B1FE00B10D5D /* profile pics */,
+				5FB070801DD6C67B00BCDDDF /* display pics */,
 				5FB070751DD6A75C00BCDDDF /* icons */,
 				5F73C5211DD1340C000F31D3 /* supporting files */,
 				5F73C4F31DD132A3000F31D3 /* HomeViewController.swift */,
@@ -139,7 +160,9 @@
 				5F73C5221DD13571000F31D3 /* MessageViewController.swift */,
 				5FC968121DD13C1600A83337 /* MeViewController.swift */,
 				5FB0707A1DD6A94300BCDDDF /* PeopleViewController.swift */,
+				5F7BFC271DD78F6F0020D3D5 /* ProfileViewController.swift */,
 				5F73C4F71DD132A3000F31D3 /* Main.storyboard */,
+				5FEAC4001DD8A8CE00B10D5D /* PhotoViewCell.swift */,
 			);
 			path = Athna;
 			sourceTree = "<group>";
@@ -176,13 +199,18 @@
 		5FB070751DD6A75C00BCDDDF /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				5F7BFC2F1DD7D6130020D3D5 /* MSG 300x300.png */,
+				5F7BFC291DD7D5F40020D3D5 /* Home 300x300.png */,
+				5F7BFC2A1DD7D5F40020D3D5 /* Profile 300x300.png */,
+				5F7BFC2B1DD7D5F40020D3D5 /* Search 300x300.png */,
 				5FB070781DD6A87900BCDDDF /* hangout.png */,
 				5FB070761DD6A87000BCDDDF /* romance.png */,
+				5FEAC3FE1DD7E10400B10D5D /* QA (71x71).png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
 		};
-		5FB070801DD6C67B00BCDDDF /* pics */ = {
+		5FB070801DD6C67B00BCDDDF /* display pics */ = {
 			isa = PBXGroup;
 			children = (
 				5FB070831DD6C6AC00BCDDDF /* Casual - KingBach - Profile.jpg */,
@@ -194,7 +222,17 @@
 				5FB0708B1DD6C87E00BCDDDF /* Date - Echo Wu - Profile.jpg */,
 				5FB0708C1DD6C87E00BCDDDF /* Date - Underwood - Profile.jpg */,
 			);
-			name = pics;
+			name = "display pics";
+			sourceTree = "<group>";
+		};
+		5FEAC4021DD8B1FE00B10D5D /* profile pics */ = {
+			isa = PBXGroup;
+			children = (
+				5FEAC4031DD8B20C00B10D5D /* Logan Paul - 1.jpg */,
+				5FEAC4041DD8B20C00B10D5D /* Logan Paul - 2.jpg */,
+				5FEAC4051DD8B20C00B10D5D /* Logan Paul - 3.jpg */,
+			);
+			name = "profile pics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,19 +343,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7BFC301DD7D6130020D3D5 /* MSG 300x300.png in Resources */,
 				5FB0708D1DD6C87E00BCDDDF /* Date - boa - Profile.jpg in Resources */,
+				5FEAC4081DD8B20C00B10D5D /* Logan Paul - 3.jpg in Resources */,
 				5FB070901DD6C87E00BCDDDF /* Date - Underwood - Profile.jpg in Resources */,
 				5FB070821DD6C69D00BCDDDF /* Casual - Arnold - Profile.jpg in Resources */,
 				5FB070771DD6A87000BCDDDF /* romance.png in Resources */,
 				5FB070881DD6C6AC00BCDDDF /* Casual - The Rock - Profile.jpg in Resources */,
+				5FEAC3FF1DD7E10400B10D5D /* QA (71x71).png in Resources */,
 				5F73C4FE1DD132A3000F31D3 /* LaunchScreen.storyboard in Resources */,
+				5F7BFC2C1DD7D5F40020D3D5 /* Home 300x300.png in Resources */,
 				5F73C4FB1DD132A3000F31D3 /* Assets.xcassets in Resources */,
 				5FB0708E1DD6C87E00BCDDDF /* Date - Cerny - Profile.jpg in Resources */,
+				5F7BFC2E1DD7D5F40020D3D5 /* Search 300x300.png in Resources */,
 				5FB0708F1DD6C87E00BCDDDF /* Date - Echo Wu - Profile.jpg in Resources */,
+				5FEAC4061DD8B20C00B10D5D /* Logan Paul - 1.jpg in Resources */,
 				5FB070871DD6C6AC00BCDDDF /* Casual - LoganPaul - Profile.jpg in Resources */,
 				5FB070791DD6A87900BCDDDF /* hangout.png in Resources */,
 				5FB070861DD6C6AC00BCDDDF /* Casual - KingBach - Profile.jpg in Resources */,
+				5F7BFC2D1DD7D5F40020D3D5 /* Profile 300x300.png in Resources */,
 				5F73C4F91DD132A3000F31D3 /* Main.storyboard in Resources */,
+				5FEAC4071DD8B20C00B10D5D /* Logan Paul - 2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +394,10 @@
 				5F73C5231DD13571000F31D3 /* MessageViewController.swift in Sources */,
 				5F73C4F41DD132A3000F31D3 /* HomeViewController.swift in Sources */,
 				5FB0707D1DD6C56A00BCDDDF /* PersonViewCell.swift in Sources */,
+				5F7BFC281DD78F6F0020D3D5 /* ProfileViewController.swift in Sources */,
 				5FB0707F1DD6C59800BCDDDF /* Person.swift in Sources */,
 				5FB0707B1DD6A94300BCDDDF /* PeopleViewController.swift in Sources */,
+				5FEAC4011DD8A8CE00B10D5D /* PhotoViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
