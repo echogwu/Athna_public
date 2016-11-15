@@ -16,23 +16,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print(UIApplication.shared.statusBarFrame.size.height)   //to get the height of the status bar: 20.0
  
     }
-/*
-    @IBAction func gotoHangoutPeople(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "people") as? PeopleViewController {
-            vc.navigationItem.title = "Hangout"
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-   
-    @IBAction func gotoRomance(_ sender: UIButton) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "people") as? PeopleViewController {
-            vc.navigationItem.title = "Romance"
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
- */
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? PeopleViewController
         if segue.identifier == "hangout"{
