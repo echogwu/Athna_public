@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1188771DEE2D70003F3977 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188731DEE2D70003F3977 /* Bolts.framework */; };
+		5F1188781DEE2D70003F3977 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188741DEE2D70003F3977 /* FBSDKCoreKit.framework */; };
+		5F1188791DEE2D70003F3977 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188751DEE2D70003F3977 /* FBSDKLoginKit.framework */; };
+		5F11887A1DEE2D70003F3977 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188761DEE2D70003F3977 /* FBSDKShareKit.framework */; };
+		5F52C1E61DEE31F300011B61 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */; };
 		5F73C4F21DD132A3000F31D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C4F11DD132A3000F31D3 /* AppDelegate.swift */; };
 		5F73C4F41DD132A3000F31D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C4F31DD132A3000F31D3 /* HomeViewController.swift */; };
 		5F73C4F61DD132A3000F31D3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C4F51DD132A3000F31D3 /* SearchViewController.swift */; };
@@ -62,6 +67,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F1188731DEE2D70003F3977 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		5F1188741DEE2D70003F3977 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5F1188751DEE2D70003F3977 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		5F1188761DEE2D70003F3977 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		5F73C4EE1DD132A3000F31D3 /* Athna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Athna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F73C4F11DD132A3000F31D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F73C4F31DD132A3000F31D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +120,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F11887A1DEE2D70003F3977 /* FBSDKShareKit.framework in Frameworks */,
+				5F1188771DEE2D70003F3977 /* Bolts.framework in Frameworks */,
+				5F1188781DEE2D70003F3977 /* FBSDKCoreKit.framework in Frameworks */,
+				5F1188791DEE2D70003F3977 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +144,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F11887B1DEE2D78003F3977 /* FBSDK */ = {
+			isa = PBXGroup;
+			children = (
+				5F1188731DEE2D70003F3977 /* Bolts.framework */,
+				5F1188741DEE2D70003F3977 /* FBSDKCoreKit.framework */,
+				5F1188751DEE2D70003F3977 /* FBSDKLoginKit.framework */,
+				5F1188761DEE2D70003F3977 /* FBSDKShareKit.framework */,
+			);
+			name = FBSDK;
+			sourceTree = "<group>";
+		};
 		5F73C4E51DD132A2000F31D3 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +178,7 @@
 		5F73C4F01DD132A3000F31D3 /* Athna */ = {
 			isa = PBXGroup;
 			children = (
+				5F11887B1DEE2D78003F3977 /* FBSDK */,
 				5FEAC4021DD8B1FE00B10D5D /* profile pics */,
 				5FB070801DD6C67B00BCDDDF /* display pics */,
 				5FB070751DD6A75C00BCDDDF /* icons */,
@@ -168,6 +194,7 @@
 				5F73C4F71DD132A3000F31D3 /* Main.storyboard */,
 				5FEAC4001DD8A8CE00B10D5D /* PhotoViewCell.swift */,
 				5FEAC40D1DD9057500B10D5D /* BioViewCell.swift */,
+				5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */,
 			);
 			path = Athna;
 			sourceTree = "<group>";
@@ -397,6 +424,7 @@
 			files = (
 				5FC968131DD13C1600A83337 /* MeViewController.swift in Sources */,
 				5F73C4F61DD132A3000F31D3 /* SearchViewController.swift in Sources */,
+				5F52C1E61DEE31F300011B61 /* FBLoginViewController.swift in Sources */,
 				5F73C4F21DD132A3000F31D3 /* AppDelegate.swift in Sources */,
 				5F73C5231DD13571000F31D3 /* MessageViewController.swift in Sources */,
 				5F73C4F41DD132A3000F31D3 /* HomeViewController.swift in Sources */,
@@ -558,6 +586,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KD746HRBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Athna",
+				);
 				INFOPLIST_FILE = Athna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sherlockllc.Athna;
@@ -571,6 +603,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KD746HRBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Athna",
+				);
 				INFOPLIST_FILE = Athna/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sherlockllc.Athna;
