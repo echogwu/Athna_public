@@ -35,12 +35,12 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 
     func loadImages(){
         let fm = FileManager.default
-        let sourcePath = Bundle.main.resourcePath!
-        let pics = try! fm.contentsOfDirectory(atPath: sourcePath)
+        let sourcePath = Bundle.main.resourcePath
+        let pics = try! fm.contentsOfDirectory(atPath: sourcePath!)
         
         for pic in pics {
             if pic.hasPrefix("Logan Paul") {
-                let path = sourcePath + "/" + pic
+                let path = sourcePath! + "/" + pic
                 mediaArray.append(path)
             }
         }

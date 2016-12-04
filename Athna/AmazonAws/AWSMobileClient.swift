@@ -26,9 +26,9 @@ class AWSMobileClient: NSObject {
     
     // Shared instance of this class
     static let sharedInstance = AWSMobileClient()
-    private var isInitialized: Bool
+    fileprivate var isInitialized: Bool
     
-    private override init() {
+    fileprivate override init() {
         isInitialized = false
         super.init()
     }
@@ -48,9 +48,9 @@ class AWSMobileClient: NSObject {
      * - parameter annotation: from application delegate.
      * - returns: true if call was handled by this component
      */
-    func withApplication(application: UIApplication, withURL url: NSURL, withSourceApplication sourceApplication: String?, withAnnotation annotation: AnyObject) -> Bool {
+    func withApplication(_ application: UIApplication, withURL url: URL, withSourceApplication sourceApplication: String?, withAnnotation annotation: AnyObject) -> Bool {
         print("withApplication:withURL")
-        AWSIdentityManager.defaultIdentityManager().interceptApplication(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        AWSIdentityManager.defaultIdentityManager().interceptApplication(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         
         if (!isInitialized) {
             isInitialized = true
@@ -65,14 +65,14 @@ class AWSMobileClient: NSObject {
      *
      * - parameter application: from application delegate.
      */
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         print("applicationDidBecomeActive:")
         initializeMobileAnalytics()
     }
     
-    private func initializeMobileAnalytics() {
+    fileprivate func initializeMobileAnalytics() {
         if (mobileAnalytics == nil) {
-            mobileAnalytics = AWSMobileAnalytics.defaultMobileAnalytics()
+            mobileAnalytics = AWSMobileAnalytics.default()
         }
     }
     
@@ -82,11 +82,11 @@ class AWSMobileClient: NSObject {
     * - parameter application: instance from application delegate.
     * - parameter launchOptions: from application delegate.
     */
-    func didFinishLaunching(application: UIApplication, withOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func didFinishLaunching(_ application: UIApplication, withOptions launchOptions: [AnyHashable: Any]?) -> Bool {
         print("didFinishLaunching:")
 
         // Register the sign in provider instances with their unique identifier
-        AWSSignInProviderFactory.sharedInstance().registerAWSSignInProvider(AWSFacebookSignInProvider.sharedInstance(), forKey: AWSFacebookSignInProviderKey)
+        AWSSignInProviderFactory.sharedInstance().registerAWSSign(AWSFacebookSignInProvider.sharedInstance(), forKey: AWSFacebookSignInProviderKey)
         
         // set up cognito user pool
         setupUserPool()
@@ -95,9 +95,9 @@ class AWSMobileClient: NSObject {
         let didFinishLaunching: Bool = AWSIdentityManager.defaultIdentityManager().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
 
         if (!isInitialized) {
-            AWSIdentityManager.defaultIdentityManager().resumeSessionWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
+            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
                 print("Result: \(result) \n Error:\(error)")
-            }) // If you get an EXC_BAD_ACCESS here in iOS Simulator, then do Simulator -> "Reset Content and Settings..."
+            } as! (Any?, Error?) -> Void) // If you get an EXC_BAD_ACCESS here in iOS Simulator, then do Simulator -> "Reset Content and Settings..."
                // This will clear bad auth tokens stored by other apps with the same bundle ID.
             isInitialized = true
         }
@@ -107,9 +107,9 @@ class AWSMobileClient: NSObject {
     
     func setupUserPool() {
         // register your user pool configuration
-        AWSCognitoUserPoolsSignInProvider.setupUserPoolWithId(AWSCognitoUserPoolId, cognitoIdentityUserPoolAppClientId: AWSCognitoUserPoolAppClientId, cognitoIdentityUserPoolAppClientSecret: AWSCognitoUserPoolClientSecret, region: AWSCognitoUserPoolRegion)
+        AWSCognitoUserPoolsSignInProvider.setupUserPool(withId: AWSCognitoUserPoolId, cognitoIdentityUserPoolAppClientId: AWSCognitoUserPoolAppClientId, cognitoIdentityUserPoolAppClientSecret: AWSCognitoUserPoolClientSecret, region: AWSCognitoUserPoolRegion)
         
-        AWSSignInProviderFactory.sharedInstance().registerAWSSignInProvider(AWSCognitoUserPoolsSignInProvider.sharedInstance(), forKey:AWSCognitoUserPoolsSignInProviderKey)
+        AWSSignInProviderFactory.sharedInstance().registerAWSSign(AWSCognitoUserPoolsSignInProvider.sharedInstance(), forKey:AWSCognitoUserPoolsSignInProviderKey)
     
     }
     

@@ -22,7 +22,7 @@ let AWSCognitoUserPoolId: String = "us-east-1_3wdqLALfz"
 let AWSCognitoUserPoolAppClientId: String = "3vvkop6lq0r58ct2rupek48buj"
 
 // Cognito User Pools Region
-let AWSCognitoUserPoolRegion: AWSRegionType = .USEast1
+let AWSCognitoUserPoolRegion: AWSRegionType = .usEast1
 
 // Cognito User Pools Client Secret
 let AWSCognitoUserPoolClientSecret: String = "1ja14g82rir5c79jgpu56qe6tag8n0v2j42dushljln2semqpbd8"

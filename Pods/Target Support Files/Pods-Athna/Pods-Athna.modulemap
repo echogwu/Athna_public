@@ -1,0 +1,6 @@
+framework module Pods_Athna {
+  umbrella header "Pods-Athna-umbrella.h"
+
+  export *
+  module * { export * }
+}

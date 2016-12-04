@@ -17,8 +17,8 @@ class PeopleViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let fm = FileManager.default
-        let path = Bundle.main.resourcePath!
-        let pics = try! fm.contentsOfDirectory(atPath: path)
+        let path = Bundle.main.resourcePath
+        let pics = try! fm.contentsOfDirectory(atPath: path!)
         
         for pic in pics {
             if pic.hasPrefix("Casual") {
@@ -57,6 +57,7 @@ class PeopleViewController: UICollectionViewController {
         
         return cell
     }
+}
     /*
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let person = people[indexPath.item]
@@ -86,6 +87,4 @@ class PeopleViewController: UICollectionViewController {
     }
     */
 
-
-}
 
