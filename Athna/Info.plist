@@ -55,6 +55,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <!-- cf bundle url types -->
     <key>CFBundleURLTypes</key>
     <array>
         <dict>
@@ -64,6 +65,7 @@
             </array>
         </dict>
     </array>
+    <!-- facebook keys -->
     <key>FacebookAppID</key>
     <string>873761836057237</string>
     <key>FacebookDisplayName</key>
@@ -75,8 +77,17 @@
         <string>fbauth2</string>
         <string>fbshareextension</string>
     </array>
+    <!-- AWS -->
     <key>AWS</key>
     <dict>
+        <key>DynamoDBObjectMapper</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>us-west-2</string>
+            </dict>
+        </dict>
         <key>IdentityManager</key>
         <dict>
             <key>Default</key>
@@ -95,23 +106,31 @@
                 </dict>
             </dict>
         </dict>
+        <key>Cognito</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>us-east-1</string>
+            </dict>
+        </dict>
         <key>MobileHub</key>
         <dict>
             <key>ProjectClientId</key>
             <string>MobileHub a50fce07-6a1a-4d9a-a433-fa8ed79c6478 aws-my-sample-app-ios-swift-v0.8</string>
         </dict>
-    </dict>
-    <key>AWS</key>
-    <dict>
-        <key>DynamoDBObjectMapper</key>
+        <key>UserFileManager</key>
         <dict>
             <key>Default</key>
             <dict>
+                <key>S3Bucket</key>
+                <string>athna-userfiles-mobilehub-341109729</string>
                 <key>Region</key>
                 <string>us-west-2</string>
             </dict>
         </dict>
     </dict>
+    <!-- security urls -->
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSExceptionDomains</key>
@@ -125,11 +144,32 @@
                 <key>NSIncludesSubdomains</key>
                 <true/>
             </dict>
-            <key>amazonaws.com.cn</key>
+            <key>cloudfront.net</key>
             <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
                 <key>NSThirdPartyExceptionMinimumTLSVersion</key>
                 <string>TLSv1.0</string>
                 <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+            <key>akamaihd.net</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>facebook.com</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>fbcdn.net</key>
+            <dict>
+                <key>NSExceptionRequiresForwardSecrecy</key>
                 <false/>
                 <key>NSIncludesSubdomains</key>
                 <true/>

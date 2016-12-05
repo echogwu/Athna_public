@@ -406,7 +406,6 @@
 				5F73C4EB1DD132A2000F31D3 /* Frameworks */,
 				5F73C4EC1DD132A2000F31D3 /* Resources */,
 				5F52C20D1DF0BEC500011B61 /* Embed Frameworks */,
-				5F52C20E1DF0BF4700011B61 /* Run Script */,
 				1295547E4B8EC06CC530CAB0 /* [CP] Embed Pods Frameworks */,
 				079A4C47669230E87E261743 /* [CP] Copy Pods Resources */,
 			);
@@ -598,20 +597,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
-		};
-		5F52C20E1DF0BF4700011B61 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -91,14 +91,23 @@ class AWSMobileClient: NSObject {
         // set up cognito user pool
         setupUserPool()
         
+        print("identity: \(AWSIdentityManager.defaultIdentityManager().identityId)")
             
         let didFinishLaunching: Bool = AWSIdentityManager.defaultIdentityManager().interceptApplication(application, didFinishLaunchingWithOptions: launchOptions)
 
+//        if (!isInitialized) {
+//            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
+//                print("Result: \(result) \n Error:\(error)")
+//            } as! (Any?, Error?) -> Void) // If you get an EXC_BAD_ACCESS here in iOS Simulator, then do Simulator -> "Reset Content and Settings..."
+//               // This will clear bad auth tokens stored by other apps with the same bundle ID.
+//            isInitialized = true
+//        }
+        
         if (!isInitialized) {
-            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
+            AWSIdentityManager.defaultIdentityManager().resumeSession(completionHandler: {(result: Any?, error: Error?) -> Void in
                 print("Result: \(result) \n Error:\(error)")
-            } as! (Any?, Error?) -> Void) // If you get an EXC_BAD_ACCESS here in iOS Simulator, then do Simulator -> "Reset Content and Settings..."
-               // This will clear bad auth tokens stored by other apps with the same bundle ID.
+                }) // If you get an EXC_BAD_ACCESS here in iOS Simulator, then do Simulator -> "Reset Content and Settings..."
+            // This will clear bad auth tokens stored by other apps with the same bundle ID.
             isInitialized = true
         }
 
