@@ -19,7 +19,6 @@
 		5F2C2E691DF3AFB800D38031 /* UserPools.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2C2E601DF3AFB800D38031 /* UserPools.storyboard */; };
 		5F2C2E6A1DF3AFB800D38031 /* UserPoolSignUpConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C2E611DF3AFB800D38031 /* UserPoolSignUpConfirmationViewController.swift */; };
 		5F2C2E6B1DF3AFB800D38031 /* UserPoolSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C2E621DF3AFB800D38031 /* UserPoolSignUpViewController.swift */; };
-		5F52C1E61DEE31F300011B61 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */; };
 		5F52C1FF1DF0BE0200011B61 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F52C1F41DF0BE0200011B61 /* FBSDKCoreKit.framework */; };
 		5F52C2001DF0BE0200011B61 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F52C1F51DF0BE0200011B61 /* FBSDKLoginKit.framework */; };
 		5F52C21C1DF0C12700011B61 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F52C21B1DF0C12700011B61 /* libsqlite3.tbd */; };
@@ -109,7 +108,6 @@
 		5F2C2E601DF3AFB800D38031 /* UserPools.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserPools.storyboard; sourceTree = "<group>"; };
 		5F2C2E611DF3AFB800D38031 /* UserPoolSignUpConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPoolSignUpConfirmationViewController.swift; sourceTree = "<group>"; };
 		5F2C2E621DF3AFB800D38031 /* UserPoolSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPoolSignUpViewController.swift; sourceTree = "<group>"; };
-		5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		5F52C1F41DF0BE0200011B61 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		5F52C1F51DF0BE0200011B61 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		5F52C21B1DF0C12700011B61 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -138,6 +136,7 @@
 		5F7BFC2A1DD7D5F40020D3D5 /* Profile 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile 300x300.png"; sourceTree = "<group>"; };
 		5F7BFC2B1DD7D5F40020D3D5 /* Search 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search 300x300.png"; sourceTree = "<group>"; };
 		5F7BFC2F1DD7D6130020D3D5 /* MSG 300x300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSG 300x300.png"; sourceTree = "<group>"; };
+		5FAA73EC1DF74E1800CF8C0D /* Athna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Athna.entitlements; sourceTree = "<group>"; };
 		5FB070761DD6A87000BCDDDF /* romance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = romance.png; sourceTree = "<group>"; };
 		5FB070781DD6A87900BCDDDF /* hangout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hangout.png; sourceTree = "<group>"; };
 		5FB0707A1DD6A94300BCDDDF /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +301,7 @@
 		5F73C4F01DD132A3000F31D3 /* Athna */ = {
 			isa = PBXGroup;
 			children = (
+				5FAA73EC1DF74E1800CF8C0D /* Athna.entitlements */,
 				5F52C2591DF39DAB00011B61 /* AmazonAws */,
 				5F52C1F31DF0BE0200011B61 /* FBSDK */,
 				5FEAC4021DD8B1FE00B10D5D /* profile pics */,
@@ -320,7 +320,6 @@
 				5F73C4F71DD132A3000F31D3 /* Main.storyboard */,
 				5FEAC4001DD8A8CE00B10D5D /* PhotoViewCell.swift */,
 				5FEAC40D1DD9057500B10D5D /* BioViewCell.swift */,
-				5F52C1E51DEE31F300011B61 /* FBLoginViewController.swift */,
 			);
 			path = Athna;
 			sourceTree = "<group>";
@@ -469,6 +468,11 @@
 						DevelopmentTeam = 3KD746HRBW;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					5F73C5031DD132A3000F31D3 = {
 						CreatedOnToolsVersion = 8.1;
@@ -609,7 +613,6 @@
 				5FC968131DD13C1600A83337 /* MeViewController.swift in Sources */,
 				5F52C2611DF39DAB00011B61 /* AWSMobileClient.swift in Sources */,
 				5F73C4F61DD132A3000F31D3 /* SearchViewController.swift in Sources */,
-				5F52C1E61DEE31F300011B61 /* FBLoginViewController.swift in Sources */,
 				5F73C4F21DD132A3000F31D3 /* AppDelegate.swift in Sources */,
 				5F2C2E661DF3AFB800D38031 /* UserPoolForgotPasswordViewController.swift in Sources */,
 				5F73C5231DD13571000F31D3 /* MessageViewController.swift in Sources */,
@@ -779,6 +782,7 @@
 			baseConfigurationReference = 03E7A9367612DA226FE99B91 /* Pods-Athna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Athna/Athna.entitlements;
 				DEVELOPMENT_TEAM = 3KD746HRBW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -802,6 +806,7 @@
 			baseConfigurationReference = 4CA15A1B4AC8AF938A0A02CB /* Pods-Athna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Athna/Athna.entitlements;
 				DEVELOPMENT_TEAM = 3KD746HRBW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

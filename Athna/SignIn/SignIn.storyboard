@@ -13,7 +13,7 @@
         <!--Sign-In View Controller-->
         <scene sceneID="Pcg-oB-wor">
             <objects>
-                <viewController storyboardIdentifier="SignIn" title="Sign-In View Controller" id="zFR-uy-L27" customClass="SignInViewController" customModule="MySampleApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" title="Sign-In View Controller" id="zFR-uy-L27" customClass="SignInViewController" customModule="Athna" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Izq-ir-PWZ"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ts-qe-o9Z"/>

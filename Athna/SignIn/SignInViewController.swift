@@ -43,77 +43,71 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         print("Sign In Loading.")
+        print("Sign In Loading.")
         
-            didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
-                object: AWSIdentityManager.defaultIdentityManager(),
-                queue: OperationQueue.main,
-                using: {(note: Notification) -> Void in
-                    // perform successful login actions here
+        
+        didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
+            object: AWSIdentityManager.defaultIdentityManager(),
+            queue: OperationQueue.main,
+            using: {(note: Notification) -> Void in
+            // perform successful login actions here
+                print("SignInVC======Sign In Observer observed sign in.==========")
             })
 
-                // Facebook login permissions can be optionally set, but must be set
-                // before user authenticates.
-                AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
+        // Facebook login permissions can be optionally set, but must be set
+        // before user authenticates.
+        AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
                 
-                // Facebook login behavior can be optionally set, but must be set
-                // before user authenticates.
-//                AWSFacebookSignInProvider.sharedInstance().setLoginBehavior(FBSDKLoginBehavior.Web.rawValue)
+        // Facebook login behavior can be optionally set, but must be set
+        // before user authenticates.
+        AWSFacebookSignInProvider.sharedInstance().setLoginBehavior(FBSDKLoginBehavior.browser.rawValue)
+        
                 
-                // Facebook UI Setup
-                facebookButton.addTarget(self, action: #selector(SignInViewController.handleFacebookLogin), for: .touchUpInside)
-                let facebookButtonImage: UIImage? = UIImage(named: "FacebookButton")
-                if let facebookButtonImage = facebookButtonImage{
-                    facebookButton.setImage(facebookButtonImage, for: UIControlState())
-                } else {
-                     print("Facebook button image unavailable. We're hiding this button.")
-                    facebookButton.isHidden = true
-                }
-                view.addConstraint(NSLayoutConstraint(item: facebookButton, attribute: .top, relatedBy: .equal, toItem: anchorViewForFacebook(), attribute: .bottom, multiplier: 1, constant: 8.0))
-                googleButton.removeFromSuperview()
-                // Custom UI Setup
-                customProviderButton.addTarget(self, action: "handleCustomSignIn", for: .touchUpInside)
-                customCreateAccountButton.addTarget(self, action: "handleUserPoolSignUp", for: .touchUpInside)
-                customForgotPasswordButton.addTarget(self, action: "handleUserPoolForgotPassword", for: .touchUpInside)
-                customProviderButton.setImage(UIImage(named: "LoginButton"), for: UIControlState())
+        // Facebook UI Setup
+        facebookButton.addTarget(self, action: #selector(SignInViewController.handleFacebookLogin), for: .touchUpInside)
+        let facebookButtonImage: UIImage? = UIImage(named: "FacebookButton")
+        if let facebookButtonImage = facebookButtonImage{
+            facebookButton.setImage(facebookButtonImage, for: UIControlState())
+        } else {
+            print("Facebook button image unavailable. We're hiding this button.")
+            facebookButton.isHidden = true
+        }
+        view.addConstraint(NSLayoutConstraint(item: facebookButton, attribute: .top, relatedBy: .equal, toItem:anchorViewForFacebook(), attribute: .bottom, multiplier: 1, constant: 8.0))
+        googleButton.removeFromSuperview()
+        
+        // Custom UI Setup
+        customProviderButton.addTarget(self, action: Selector(("handleCustomSignIn")), for: .touchUpInside)
+        customCreateAccountButton.addTarget(self, action: Selector(("handleUserPoolSignUp")), for: .touchUpInside)
+        customForgotPasswordButton.addTarget(self, action: Selector(("handleUserPoolForgotPassword")), for: .touchUpInside)
+        customProviderButton.setImage(UIImage(named: "LoginButton"), for: UIControlState())
     }
     
     deinit {
         NotificationCenter.default.removeObserver(didSignInObserver)
     }
     
-    func dimissController() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Utility Methods
     
     func handleLoginWithSignInProvider(_ signInProvider: AWSSignInProvider) {
-        AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
+        print("signInProvider=\(signInProvider)")
+        AWSIdentityManager.defaultIdentityManager().loginWithSign(signInProvider, completionHandler: {(result: Any?, error: Error?) -> Void in
             // If no error reported by SignInProvider, discard the sign-in view controller.
             if error == nil {
                 DispatchQueue.main.async(execute: {
-                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                    self.presentingViewController?.dismiss(animated: false, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
+                    
                 })
             }
-             print("result = \(result), error = \(error)")
-        } as! (Any?, Error?) -> Void)
+            print("result = \(result), error = \(error)")
+        })
+        
     }
 
-    func showErrorDialog(_ loginProviderName: String, withError error: NSError) {
-         print("\(loginProviderName) failed to sign in w/ error: \(error)")
-        let alertController = UIAlertController(title: NSLocalizedString("Sign-in Provider Sign-In Error", comment: "Sign-in error for sign-in failure."), message: NSLocalizedString("\(loginProviderName) failed to sign in w/ error: \(error)", comment: "Sign-in message structure for sign-in failure."), preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Label to cancel sign-in failure."), style: .cancel, handler: nil)
-        alertController.addAction(doneAction)
-        present(alertController, animated: true, completion: nil)
-    }
-
-    // MARK: - IBActions
     func handleFacebookLogin() {
-        handleLoginWithSignInProvider(AWSFacebookSignInProvider.sharedInstance())
+        self.handleLoginWithSignInProvider(AWSFacebookSignInProvider.sharedInstance())
     }
     
-
     func anchorViewForFacebook() -> UIView {
             return orSignInWithLabel
     }
