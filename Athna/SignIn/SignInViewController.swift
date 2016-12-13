@@ -43,15 +43,12 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Sign In Loading.")
-        
         
         didSignInObserver =  NotificationCenter.default.addObserver(forName: NSNotification.Name.AWSIdentityManagerDidSignIn,
             object: AWSIdentityManager.defaultIdentityManager(),
             queue: OperationQueue.main,
             using: {(note: Notification) -> Void in
             // perform successful login actions here
-                print("SignInVC======Sign In Observer observed sign in.==========")
             })
 
         // Facebook login permissions can be optionally set, but must be set

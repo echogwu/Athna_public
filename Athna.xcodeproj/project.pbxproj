@@ -10,6 +10,7 @@
 		2B4FBD7DD2137ADA08C65C1C /* Pods_Athna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D1A99FE59FB3E193CDE187 /* Pods_Athna.framework */; };
 		5F1188771DEE2D70003F3977 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188731DEE2D70003F3977 /* Bolts.framework */; };
 		5F11887A1DEE2D70003F3977 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1188761DEE2D70003F3977 /* FBSDKShareKit.framework */; };
+		5F2780DA1DFF38DB008BAE90 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2780D81DFF387F008BAE90 /* AWSCore.framework */; };
 		5F2C2E631DF3AFB800D38031 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2C2E591DF3AFB800D38031 /* SignIn.storyboard */; };
 		5F2C2E641DF3AFB800D38031 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C2E5A1DF3AFB800D38031 /* SignInViewController.swift */; };
 		5F2C2E651DF3AFB800D38031 /* SignInViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C2E5C1DF3AFB800D38031 /* SignInViewControllerExtensions.swift */; };
@@ -99,6 +100,7 @@
 		4CA15A1B4AC8AF938A0A02CB /* Pods-Athna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Athna.release.xcconfig"; path = "Pods/Target Support Files/Pods-Athna/Pods-Athna.release.xcconfig"; sourceTree = "<group>"; };
 		5F1188731DEE2D70003F3977 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Bolts.framework; sourceTree = "<group>"; };
 		5F1188761DEE2D70003F3977 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../FBSDKShareKit.framework; sourceTree = "<group>"; };
+		5F2780D81DFF387F008BAE90 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = "../../../Library/Developer/Xcode/DerivedData/Athna-ftnjrwhbqraoeehcxyrnnxeyhftv/Build/Products/Debug-iphonesimulator/AWSCore/AWSCore.framework"; sourceTree = "<group>"; };
 		5F2C2E591DF3AFB800D38031 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		5F2C2E5A1DF3AFB800D38031 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5F2C2E5C1DF3AFB800D38031 /* SignInViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewControllerExtensions.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2780DA1DFF38DB008BAE90 /* AWSCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +245,7 @@
 		5F52C21A1DF0C12700011B61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F2780D81DFF387F008BAE90 /* AWSCore.framework */,
 				5F52C21D1DF0C13600011B61 /* libz.tbd */,
 				5F52C21B1DF0C12700011B61 /* libsqlite3.tbd */,
 				C9D1A99FE59FB3E193CDE187 /* Pods_Athna.framework */,
@@ -830,7 +834,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/**",
+				);
 				INFOPLIST_FILE = AthnaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sherlockllc.AthnaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -845,6 +854,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AthnaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sherlockllc.AthnaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

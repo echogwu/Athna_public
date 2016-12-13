@@ -12,3 +12,4 @@ target :'Athna' do
     pod 'AWSMobileAnalytics'
     pod 'AWSS3'
 end
+

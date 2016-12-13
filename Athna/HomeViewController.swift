@@ -15,7 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hangout_btn: UIButton!
     @IBOutlet weak var romance_btn: UIButton!
     var signInObserver: Any
-    var signOutObserver: Any   //if put a "!" or "?" after the type "Any", we dont need an initializer and can add oberservers in viewDidLoad, even we have a deinit(). But if without "!" or "?", we'll have to add an initializer.
+    var signOutObserver: Any  //if put a "!" or "?" after the type "Any", we dont need an initializer and can add oberservers in viewDidLoad, even we have a deinit(). But if without "!" or "?", we'll have to add an initializer.
+    
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,17 +27,18 @@ class HomeViewController: UIViewController {
         })
         super.init(coder: aDecoder)
     }
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(UIApplication.shared.statusBarFrame.size.height)   //to get the height of the status bar: 20.0
-        
+        //print(UIApplication.shared.statusBarFrame.size.height)   //to get the height of the status bar: 20.0        
+    }
+    
+    //imagine for the first time users use this app, HomeVC will be the entry VC, so HomeVC will be loaded before it transition to the SignInVC, after logging in, the SignInVC will dismiss and come back to HomeVC, but viewDidLoad won't get called this time while viewWillAppear will get called. Thus we need to put .isLoggedIn which is in the func setupRightBarButtonItem in viewWillAppear() intead of viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         self.presentSignInViewController()
-        
         self.setupRightBarButtonItem()
-        
     }
     
     deinit {
@@ -44,7 +46,6 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.removeObserver(signOutObserver)
     }
  
-    
     func presentSignInViewController() {
         if !AWSIdentityManager.defaultIdentityManager().isLoggedIn {
             let storyboard = UIStoryboard(name: "SignIn", bundle: nil)
